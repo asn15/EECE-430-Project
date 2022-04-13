@@ -29,3 +29,27 @@ Tracking progress for EECE 430 project
 5- Run the server locally
 
   python manage.py runserver 0.0.0.0:8000
+
+
+
+## Current Implementations:
+
+1- User can add Players
+
+2- User can add Teams
+
+3- User can link a player to a specific team
+
+4- User can look at leaderboard
+
+5- User can see and interact with Tournament results and statistics
+
+
+## Future Implementations:
+
+- Scheduling Classes
+- Reserving fields
+- Payment form
+- Contact form
+- Consultation page
+- and more... :)
