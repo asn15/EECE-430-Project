@@ -21,6 +21,7 @@ class HomePageView(View):
             "teams": all_teams
         }
         return render(request, 'home.html', context)
+    
 
 
 # Render teams using ListView class
@@ -47,6 +48,12 @@ class ScoresListView(ListView):
         if form.is_valid():
             form.save()
         return redirect('/scores/')
+    
+    
+def DeleteEvent(request):
+    GameScore.objects.all().delete()
+    return redirect('/scores/')
+    
 
 
 class TeamDetailsView(DetailView):
@@ -80,6 +87,7 @@ class AddTeamView(View):
         else:
             context = {'form': form}
             return render(request, 'add_team.html', context)
+
 
 
 class AddPlayerView(View):

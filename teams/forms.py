@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from crispy_forms import layout
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
+from crispy_forms.layout import Submit, Button
 
 from teams.models import Team, GameScore, Player
 
@@ -74,6 +74,9 @@ class ScoreModelForm(ModelForm):
         super(ScoreModelForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.helper.add_input(Submit('submit', 'Submit'))
+        # if kwargs['instance']:
+        #     self.helper.add_input(Button('delete', 'Delete', onclick=GameScore.objects.all().delete()))
+
 
     class Meta:
         model = GameScore

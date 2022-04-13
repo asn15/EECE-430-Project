@@ -4,4 +4,12 @@
     {% csrf_token %}
     {{ form|crispy }}
     <input type="submit" value="Submit">
+
 </form>
+
+<br>
+
+<div>
+    <a href={% url 'delete-matches-view' %}>Delete Entries</a>
+    </div>
+    <br>
