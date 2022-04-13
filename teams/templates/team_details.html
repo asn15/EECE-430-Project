@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <img class="icon-width" src="{% static 'images/ic_team.png' %}" alt="">
+
+    <h2>{{ team.name }}</h2>
+    <p>{{ team.details }}</p>
+
+    {% for player in team.player_set.all %}
+        <a href="/player/{{ player.name }}">
+            <h3>{{ player.name }}</h3>
+        </a>
+    {% endfor %}
+
+{% endblock %}

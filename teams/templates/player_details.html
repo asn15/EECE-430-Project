@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <img class="icon-width" src="{% static 'images/ic_player.png' %}" alt="">
+
+    {% if player.is_captain %}
+        <h2> {{ player.name }} Captain {{ player.team }} </h2>
+    {% else %}
+        <h2> {{ player.name }} from {{ player.team }} </h2>
+    {% endif %}
+
+    <h3> Player Number {{ player.number }}  </h3>
+    <h3> Player Age {{ player.age }} </h3>
+    <h3> Position {{ player.get_position_in_field_display }} </h3>
+
+{% endblock %}
