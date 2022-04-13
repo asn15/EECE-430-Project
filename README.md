@@ -7,28 +7,28 @@ Tracking progress for EECE 430 project
 
 1- Create a virtual environment
 
-  virtualenv eagles
+  **virtualenv eagles**
 
 2- Activate the virtual environment
 
   (Mac)
-  source teammanager_env/bin/activate
+  **source teammanager_env/bin/activate**
 
   (Windows)
-  cd teammanager_env/Scripts
-  activate
+  **cd teammanager_env/Scripts
+  activate**
 
 3- Change directory to the project folder
 
-  cd C:/your_project_directory (where you put the project unzipped)
+  **cd C:/your_project_directory** (where you put the project unzipped)
   
 4- Install dependecies from requirements.txt file
 
-  pip install -r requirements.txt
+  **pip install -r requirements.txt**
 
 5- Run the server locally
 
-  python manage.py runserver 0.0.0.0:8000
+  **python manage.py runserver 0.0.0.0:8000**
 
 
 
