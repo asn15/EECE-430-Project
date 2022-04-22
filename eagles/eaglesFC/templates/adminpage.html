@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Page</title>
     <link rel="stylesheet" href="../static/nicepage.css" media="screen" />
     <link rel="stylesheet" href="../static/FC-Eagles.css" media="screen" />
-    <link rel="stylesheet" href="../static/adminpage.css" media="screen" />
     <script
       class="u-script"
       type="text/javascript"
@@ -20,6 +20,9 @@
       src="../static/nicepage.js"
       defer=""
     ></script>
+    <style>
+      {% include "static/adminpage.css" %}
+    </style>
     <link rel="icon" href="../static/images/EaglesFavicon.png" />
     <link
       id="u-theme-google-font"
