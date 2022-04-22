@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Team Formation</title>
+    <style>
+      {% include "static/adminsecondarypages.css" %}
+    </style>
+  </head>
+  <body>
+    <h1>Update Team Formation</h1>
+
+    <form
+      action="updaterecordteamformation/{{ myteamformation.id }}"
+      method="post"
+    >
+      {% csrf_token %} GK SP:<br />
+      <input name="GK_SP" value="{{ myteamformation.GK_SP }}" />
+      <br /><br />
+      DF SP L:<br />
+      <input name="DF_SP_L" value="{{ myteamformation.DF_SP_L }}" />
+      <br /><br />
+      DF SP LM:<br />
+      <input name="DF_SP_LM" value="{{ myteamformation.DF_SP_LM }}" />
+      <br /><br />
+      DF SP RM:<br />
+      <input name="DF_SP_RM" value="{{ myteamformation.DF_SP_RM }}" />
+      <br /><br />
+      DF SP R:<br />
+      <input name="DF_SP_R" value="{{ myteamformation.DF_SP_R }}" />
+      <br /><br />
+      MF SP L:<br />
+      <input name="MF_SP_L" value="{{ myteamformation.MF_SP_L }}" />
+      <br /><br />
+      MF SP LM:<br />
+      <input name="MF_SP_LM" value="{{ myteamformation.MF_SP_LM }}" />
+      <br /><br />
+      MF SP RM:<br />
+      <input name="MF_SP_RM" value="{{ myteamformation.MF_SP_RM }}" />
+      <br /><br />
+      MF SP R:<br />
+      <input name="MF_SP_R" value="{{ myteamformation.MF_SP_R }}" />
+      <br /><br />
+      FW SP LW:<br />
+      <input name="FW_SP_LW" value="{{ myteamformation.FW_SP_LW }}" />
+      <br /><br />
+      FW SP RW:<br />
+      <input name="FW_SP_RW" value="{{ myteamformation.FW_SP_RW }}" />
+      <br /><br />
+      GK NS:<br />
+      <input name="GK_NS" value="{{ myteamformation.GK_NS }}" />
+      <br /><br />
+      DF NS 1:<br />
+      <input name="DF_NS_1" value="{{ myteamformation.DF_NS_1 }}" />
+      <br /><br />
+      DF NS 2:<br />
+      <input name="DF_NS_2" value="{{ myteamformation.DF_NS_2 }}" />
+      <br /><br />
+      MF NS 1:<br />
+      <input name="MF_NS_1" value="{{ myteamformation.MF_NS_1 }}" />
+      <br /><br />
+      MF NS 2:<br />
+      <input name="MF_NS_2" value="{{ myteamformation.MF_NS_2 }}" />
+      <br /><br />
+      FW NS LW:<br />
+      <input name="FW_NS_LW" value="{{ myteamformation.FW_NS_LW }}" />
+      <br /><br />
+      FW NS RW:<br />
+      <input name="FW_NS_RW" value="{{ myteamformation.FW_NS_RW }}" />
+      <br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
