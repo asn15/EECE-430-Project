@@ -1,6 +1,6 @@
 from django.db import models
 
-
+import datetime
 # Create your models here.
 from django.db.models import DO_NOTHING
 
@@ -37,3 +37,11 @@ class GameScore(models.Model):
 
     def __str__(self):
         return '{} {} - {} {}'.format(self.first_team_relation.name, self.first_team_relation.name, self.second_team_score, self.second_team)
+
+class BookingAndPurchasesHistory(models.Model):
+  fields = models.CharField(max_length=256,
+                                       choices=(('1', 'Tigers'), ('2', 'Lions'), ('3', 'Sharks'), ('4', 'Goats')), default = 'Tigers')
+  made_on = models.DateField(default=datetime.date.today)
+
+  def __str__(self):
+      return '{} - {}'.format(self.time, self.description)

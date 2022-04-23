@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Booking Results {% endblock %}
+
+{% block content %}
+    <div align="center">
+        <img class="icon-width" src="{% static 'images/books.png' %}" alt="">
+    </div>
+    <div align="center">
+        {% include 'add_booking.html' %}
+    </div>
+    {% for booking in bookings %}
+        <div align="center">
+
+            <h2> {{ booking.get_fields_display }} is reserved on {{ booking.made_on }} </h2>
+        </div>
+    {% endfor %}
+
+{% endblock %}

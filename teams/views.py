@@ -6,8 +6,8 @@ from django.http import HttpResponse
 from django.views import View
 from django.views.generic import ListView, DetailView
 
-from teams.forms import TeamForm, TeamModelForm, ScoreModelForm, PlayerModelForm
-from teams.models import Team, GameScore, Player
+from teams.forms import TeamForm, TeamModelForm, ScoreModelForm, PlayerModelForm, Bookingform
+from teams.models import Team, GameScore, Player, BookingAndPurchasesHistory
 
 
 # Render teams using View class
@@ -106,3 +106,20 @@ class AddPlayerView(View):
         else:
             context = {'form': form}
             return render(request, 'add_player.html', context)
+
+class Bookings(ListView):
+    model = BookingAndPurchasesHistory
+    template_name = 'bookings.html'
+    context_object_name = 'bookings'
+
+    def get_context_data(self, **kwargs):
+        context = super(Bookings, self).get_context_data(**kwargs)
+        context['form'] = Bookingform()
+        return context
+
+    # Create a new game-score from form
+    def post(self, request, *args, **kwargs):
+        form = Bookingform(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/bookings/')
