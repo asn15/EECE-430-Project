@@ -1,0 +1,14 @@
+{% load crispy_forms_tags %}
+
+<form action="/consultation/" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Submit">
+</form>
+
+<br>
+
+<div>
+    <a href={% url 'delete-consultation-view' %}>Delete Latest Consultation</a>
+    </div>
+    <br>

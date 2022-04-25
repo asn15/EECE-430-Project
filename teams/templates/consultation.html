@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Consultation Results {% endblock %}
+
+{% block content %}
+    <div align="center">
+        <img class="icon-width" src="{% static 'images/consultation.png' %}" alt="">
+    </div>
+    <div align="center">
+        {% include 'add_consultation.html' %}
+    </div>
+    {% for c in consultation %}
+        <div align="center">
+
+            <h2> {{ c.name_1 }} reserved with {{ c.get_coach_name_display }} on {{ c.date }} at {{ c.get_time_display }}</h2>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -6,8 +6,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views import View
 from django.views.generic import ListView, DetailView
 
-from teams.forms import TeamForm, TeamModelForm, ScoreModelForm, PlayerModelForm, Bookingform
-from teams.models import Team, GameScore, Player, BookingAndPurchasesHistory
+from teams.forms import TeamForm, TeamModelForm, ScoreModelForm, PlayerModelForm, Bookingform, Consultationform
+from teams.models import Team, GameScore, Player, BookingAndPurchasesHistory, Consultation
 
 
 # Render teams using View class
@@ -130,7 +130,30 @@ class Bookings(ListView):
     def post(self, request, *args, **kwargs):
         form = Bookingform(request.POST)
         if form.is_valid():
-            if BookingAndPurchasesHistory.objects.filter(timings = request.POST['timings'], made_on = request.POST['made_on'], fields = request.POST['fields']).exists():
+            if BookingAndPurchasesHistory.objects.filter(Timing = request.POST['Timing'], Date = request.POST['Date'], Fields = request.POST['Fields']).exists():
                 return render(request, 'error_booking.html')
             form.save()
         return redirect('/bookings/')
+
+class Consultations(ListView):
+    model = Consultation
+    template_name = 'consultation.html'
+    context_object_name = 'consultation'
+
+    def get_context_data(self, **kwargs):
+        context = super(Consultations, self).get_context_data(**kwargs)
+        context['form'] = Consultationform()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = Consultationform(request.POST)
+        if form.is_valid():
+            if Consultation.objects.filter(date = request.POST['date'],time = request.POST['time'], coach_name = request.POST['coach_name']).exists():
+                return render(request, 'error_booking.html')
+            form.save()
+        return redirect('/consultation/')
+
+def DeleteConsultations(request):
+    if Consultation.objects.last():
+        Consultation.objects.last().delete()
+    return redirect('/consultation/')

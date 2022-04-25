@@ -42,13 +42,28 @@ class GameScore(models.Model):
         return '{} {} - {} {}'.format(self.first_team_relation.name, self.first_team_relation.name, self.second_team_score, self.second_team)
 
 class BookingAndPurchasesHistory(models.Model):
-  fields = models.CharField(max_length=256,
+  Fields = models.CharField(max_length=256,
                                        choices=(('1', 'Tigers'), ('2', 'Lions'), ('3', 'Sharks'), ('4', 'Goats')), default = 'Tigers')
-  made_on = models.DateField(default=datetime.date.today)
+  Date = models.DateField(default=datetime.date.today)
   
-  timings = models.CharField(max_length=256,
+  Timing = models.CharField(max_length=256,
                                        choices=(('1', '1PM - 2PM'), ('2', '2PM - 3PM'), ('3', '3PM - 4PM'), ('4', '4PM - 5PM')), default=None, 
                                        )
 
   def __str__(self):
       return '{} - {}'.format(self.time, self.description, self.timing)
+  
+    
+class Consultation(models.Model):
+    name_1 = models.CharField(max_length=256, validators=[alphanumeric])
+    number = models.PositiveIntegerField()
+    date = models.DateField(default=datetime.date.today)
+    time = models.CharField(max_length=256,
+                                         choices=(('1', '1PM - 2PM'), ('2', '2PM - 3PM'), ('3', '3PM - 4PM'), ('4', '4PM - 5PM')), default=None, 
+                                         )
+    coach_name = models.CharField(max_length= 256, 
+                                  choices=(('1', 'Youssef El Sayed'), ('2', 'Karim Nasreddine'), ('3', 'Jad Jawad'), ('4', 'Yasmina Mehshi'), ('5', 'Salwa Fidawi')), default=None, 
+                                  )
+
+    def __str__(self):
+        return '{} - {}'.format(self.name_1, self.number)

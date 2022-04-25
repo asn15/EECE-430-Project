@@ -4,7 +4,7 @@ from crispy_forms import layout
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Button
 
-from teams.models import Team, GameScore, Player, BookingAndPurchasesHistory
+from teams.models import Team, GameScore, Player, BookingAndPurchasesHistory, Consultation
 
 
 class TeamForm(forms.Form):
@@ -106,13 +106,38 @@ class Bookingform(ModelForm):
         fields = '__all__'
 
         labels = {
-            'fields': 'fields',
-            'timings': 'timings'
+            'Fields': 'Select a Field',
+            'Timing': 'Select a Time',
+            'Date': 'Select a Date'
         }
         widgets = {
-            'made_on': DateInput(),
+            'Date': DateInput(),
         }
    
+class Consultationform(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(Consultationform, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+    class Meta:
+        model = Consultation
+    
+        fields = '__all__'
+
+        labels = {
+            'name_1': 'Please enter your name',
+            'number': 'Please enter your phone number',
+            'date'  : 'Please select your preferred date',
+            'time'  : 'Please select your preferred timing',
+            'coach_name': 'Please select the coach',
+        }
+        widgets = {
+            'date': DateInput(),
+        }
+       
+        
+
     
     
     
