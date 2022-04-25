@@ -2,7 +2,7 @@ from django.db import IntegrityError
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.views import View
 from django.views.generic import ListView, DetailView
 
@@ -53,7 +53,14 @@ class ScoresListView(ListView):
 def DeleteEvent(request):
     GameScore.objects.all().delete()
     return redirect('/scores/')
+
     
+def DeleteBookings(request):
+    if BookingAndPurchasesHistory.objects.last():
+        BookingAndPurchasesHistory.objects.last().delete()
+    return redirect('/bookings/')
+    
+
 
 
 class TeamDetailsView(DetailView):
@@ -107,6 +114,9 @@ class AddPlayerView(View):
             context = {'form': form}
             return render(request, 'add_player.html', context)
 
+def errorbooking(request):
+    return render(request, 'error_booking.html')
+
 class Bookings(ListView):
     model = BookingAndPurchasesHistory
     template_name = 'bookings.html'
@@ -117,9 +127,10 @@ class Bookings(ListView):
         context['form'] = Bookingform()
         return context
 
-    # Create a new game-score from form
     def post(self, request, *args, **kwargs):
         form = Bookingform(request.POST)
         if form.is_valid():
+            if BookingAndPurchasesHistory.objects.filter(timings = request.POST['timings'], made_on = request.POST['made_on'], fields = request.POST['fields']).exists():
+                return render(request, 'error_booking.html')
             form.save()
         return redirect('/bookings/')

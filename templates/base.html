@@ -7,7 +7,7 @@
 
     <!-- Bootstrap  Latest compiled and minified CSS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- My Custom Css Stylesheet -->
 
     <!-- Fonts -->
@@ -18,15 +18,23 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Team Management</a>
+      <a class="navbar-brand" href="/">EAGLES</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="/">Home<span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="/teams">Leaderboards</a>
           <a class="nav-item nav-link" href="/scores"> Tournament Results</a>
+          <a class="nav-item nav-link" href="/bookings"> Bookings</a>
+          <a class="nav-item nav-link" href="/"> Consultation</a>
+          <a class="nav-item nav-link" href="/"> Team Formation</a>
+          <a class="nav-item nav-link" href="/"> Merchandise</a>
+          <a class="nav-item nav-link" href="/"> Statistics</a>
+          <a class="nav-item nav-link" href="/"> Contact Us</a>
+
+
+
         </div>
       </div>
     </nav>

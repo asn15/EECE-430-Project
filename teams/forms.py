@@ -106,8 +106,8 @@ class Bookingform(ModelForm):
         fields = '__all__'
 
         labels = {
-            'time': 'Time',
-            'description': 'Description'
+            'fields': 'fields',
+            'timings': 'timings'
         }
         widgets = {
             'made_on': DateInput(),

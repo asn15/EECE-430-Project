@@ -3,6 +3,9 @@ from django.db import models
 import datetime
 # Create your models here.
 from django.db.models import DO_NOTHING
+from django.core.validators import RegexValidator
+alphanumeric = RegexValidator(r'^([a-zA-Z]+\s)*[a-zA-Z]+$', 'Only characters are allowed.')
+
 
 
 class Team(models.Model):
@@ -15,9 +18,9 @@ class Team(models.Model):
 
 
 class Player(models.Model):
-    name = models.CharField(max_length=256)
-    number = models.IntegerField()
-    age = models.IntegerField()
+    name = models.CharField(max_length=256, validators=[alphanumeric])
+    number = models.PositiveIntegerField()
+    age = models.PositiveIntegerField()
     position_in_field = models.CharField(max_length=256,
                                          choices=(('1', 'GK'), ('2', 'RB'), ('3', 'RM'), ('4', 'ST')))
     is_captain = models.BooleanField(default=False)
@@ -31,8 +34,8 @@ class Player(models.Model):
 class GameScore(models.Model):
     first_team_relation = models.ForeignKey(Team, related_name='first_team', null=True, on_delete=DO_NOTHING)
     second_team_relation = models.ForeignKey(Team, related_name='second_team', null=True, on_delete=DO_NOTHING)
-    first_team_score = models.IntegerField(default=0)
-    second_team_score = models.IntegerField(default=0)
+    first_team_score = models.PositiveIntegerField(default=0)
+    second_team_score = models.PositiveIntegerField(default=0)
     game_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -42,6 +45,10 @@ class BookingAndPurchasesHistory(models.Model):
   fields = models.CharField(max_length=256,
                                        choices=(('1', 'Tigers'), ('2', 'Lions'), ('3', 'Sharks'), ('4', 'Goats')), default = 'Tigers')
   made_on = models.DateField(default=datetime.date.today)
+  
+  timings = models.CharField(max_length=256,
+                                       choices=(('1', '1PM - 2PM'), ('2', '2PM - 3PM'), ('3', '3PM - 4PM'), ('4', '4PM - 5PM')), default=None, 
+                                       )
 
   def __str__(self):
-      return '{} - {}'.format(self.time, self.description)
+      return '{} - {}'.format(self.time, self.description, self.timing)
