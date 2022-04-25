@@ -52,4 +52,6 @@ Tracking progress for EECE 430 project
 - Payment form
 - Contact form
 - Consultation page
+- Newspage
+- Page for contacts
 - and more... :)
