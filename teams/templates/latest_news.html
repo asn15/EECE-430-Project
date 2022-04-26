@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+{% extends 'base.html' %}
+{% load static %}
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/news.css' %}">
+  <title>Latest News</title>
+</head>
+{% block content %}
+
+<body>
+  <div class="container">
+    <header>
+    <h1 class="heading-1">Eagles Club - Latest News</h1>
+    <div class="sub-heading">
+      <p>Saturday, <span>April 28, 2022</span></p>
+     
+    </div>
+    </header>
+
+    <div class="main">
+      <div class="home">
+        <div class="left">
+          <img src="https://previews.123rf.com/images/dotshock/dotshock1712/dotshock171200935/92434100-happy-american-football-team-with-trophy-celebrating-victory-in-the-cup-final-on-big-modern-stadium-.jpg" class="home-img" alt="Paper photo">
+
+          <h2 class="heading-2">
+            Our team wins national championships
+          </h2>
+        </div>
+
+        <div class="right">
+          <h3 class="heading-3">latest news</h3>
+          <div class="lists">
+            <div class="list">
+              <img src="https://thumbs.dreamstime.com/b/young-coach-teaching-kids-football-field-trainer-explains-to-schoolboys-training-rules-coaching-children-soccer-session-211666921.jpg">
+              <p>International coach consults players for one week</p>
+            </div>
+
+            <div class="list">
+              <img src="https://www.e-architect.com/images/jpgs/liverpool/anfield_lfc_6_jul06.jpg" alt="photo 2">
+              <p>Our club is opening a branch in this city</p>
+            </div>
+
+            <div class="list">
+              <img src="https://i.ebayimg.com/images/g/5i8AAOSw-31aeuW6/s-l300.jpg" alt="photo 3">
+              <p>Check out the new items in our store</p>
+            </div>
+
+            <div class="list">
+              <img src="https://soccerinteraction.com/wp-content/uploads/2018/09/ajax1.jpg" alt="photo 4">
+              <p>Try-outs are now open. Do not miss a chance to be part of the next team!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+  </div>
+</body>
+{% endblock %}
+
+</html>

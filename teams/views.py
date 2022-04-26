@@ -157,3 +157,10 @@ def DeleteConsultations(request):
     if Consultation.objects.last():
         Consultation.objects.last().delete()
     return redirect('/consultation/')
+
+def Contact(request):
+    return render(request, 'contact.html')
+
+
+def News(request):
+    return render(request, 'latest_news.html')

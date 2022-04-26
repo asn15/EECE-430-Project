@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 from teams.views import HomePageView, TeamsListView, ScoresListView, PlayerDetailsView, TeamDetailsView, AddTeamView, \
-    AddPlayerView, DeleteEvent, Bookings, DeleteBookings, errorbooking, Consultations, DeleteConsultations
+    AddPlayerView, DeleteEvent, Bookings, DeleteBookings, errorbooking, Consultations, DeleteConsultations, Contact, News
 
 # Regular expression
 # -     : case sensitive A != a
@@ -43,7 +43,8 @@ urlpatterns = [
     url(r'^error_booking/$', errorbooking, name="error-booking-view"),
     url(r'^consultation/$', Consultations.as_view(), name="consultation"),
     url(r'^delete_consultation/$', DeleteConsultations, name="delete-consultation-view"),
-
+    url(r'^contact/$', Contact, name="contact-view"),
+    url(r'^latest_news/$', News, name="news-view"),
 
 
 
