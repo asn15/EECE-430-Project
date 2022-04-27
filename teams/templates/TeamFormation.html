@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px" lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="​" />
+    <meta name="description" content="" />
+    <meta name="page_type" content="np-template-header-footer-from-plugin" />
+    <title>Team Formation</title>
+    <link rel="stylesheet" href="../static/css/nicepage.css" media="screen" />
+    <link
+      rel="stylesheet"
+      href="../static/css/Team-Formation.css"
+      media="screen"
+    />
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="../static/jquery.js"
+      defer=""
+    ></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="../static/nicepage.js"
+      defer=""
+    ></script>
+    <link rel="icon" href="../static/images/EaglesFavicon.png" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
+    <link
+      id="u-page-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "FC Eagles",
+        "logo": "images/EaglesLogo.png"
+      }
+    </script>
+    <meta name="theme-color" content="#478ac9" />
+    <meta property="og:title" content="Team Formation" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="u-body u-xl-mode">
+    <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-1c2f">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <a
+          href="https://nicepage.com"
+          class="u-image u-logo u-image-1"
+          data-image-width="1000"
+          data-image-height="1000"
+          title="Eagles Logo"
+        >
+          <img
+            src="{% static '../static/images/EaglesLogo.png' %}"
+            class="u-logo-image u-logo-image-1"
+          />
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div
+            class="menu-collapse"
+            style="font-size: 1rem; letter-spacing: 0px; font-weight: 700"
+          >
+            <a
+              class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+              href="#"
+              style="padding: 4px 0px; font-size: calc(1em + 8px)"
+            >
+              <svg class="u-svg-link" viewBox="0 0 24 24">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="#menu-hamburger"
+                ></use>
+              </svg>
+              <svg
+                class="u-svg-content"
+                version="1.1"
+                id="menu-hamburger"
+                viewBox="0 0 16 16"
+                x="0px"
+                y="0px"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect y="1" width="16" height="2"></rect>
+                  <rect y="7" width="16" height="2"></rect>
+                  <rect y="13" width="16" height="2"></rect>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
+              <li class="u-nav-item">
+                <a
+                  class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                  href="home"
+                  style="padding: 10px 0px; color: white !important"
+                  >HOME</a
+                >
+              </li>
+              <li class="u-nav-item">
+                <a
+                  class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                  href="RESERVATION.html"
+                  style="padding: 10px 0px"
+                  >RESERVATION</a
+                >
+              </li>
+              <li class="u-nav-item">
+                <a
+                  class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                  href="LOGIN.html"
+                  style="padding: 10px 0px"
+                  >LOGIN</a
+                >
+              </li>
+              <li class="u-nav-item">
+                <a
+                  class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                  style="padding: 10px 0px; color: white !important"
+                  >MORE</a
+                >
+                <div
+                  class="u-nav-popup"
+                  style="
+                    right: 0;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                  "
+                >
+                  <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
+                    <li class="u-nav-item">
+                      <a
+                        class="u-button-style u-nav-link u-white"
+                        href="latest_news"
+                        >LATEST NEWS</a
+                      >
+                    </li>
+                    <li class="u-nav-item">
+                      <a
+                        class="u-button-style u-nav-link u-white"
+                        href="add_player"
+                        >PLAYERS</a
+                      >
+                    </li>
+                    <li class="u-nav-item">
+                      <a class="u-button-style u-nav-link u-white" href="teams"
+                        >TEAMS</a
+                      >
+                    </li>
+                    <li class="u-nav-item">
+                      <a
+                        class="u-button-style u-nav-link u-white"
+                        href="add_team"
+                        >ADD A TEAM</a
+                      >
+                    </li>
+                    <li class="u-nav-item">
+                      <a class="u-button-style u-nav-link u-white" href="scores"
+                        >TOURNAMENT RESULTS</a
+                      >
+                    </li>
+                    <li class="u-nav-item">
+                      <a
+                        class="u-button-style u-nav-link u-white"
+                        href="consultation"
+                        >CONSULTATION</a
+                      >
+                    </li>
+                    <li class="u-nav-item">
+                      <a
+                        class="u-button-style u-nav-link u-white"
+                        href="teamformation"
+                        >TEAM FORMATION</a
+                      >
+                    </li>
+                    <li class="u-nav-item">
+                      <a
+                        class="u-button-style u-nav-link u-white"
+                        href="bookingandpurchaseshistory"
+                        >BOOKING AND PURCHASING HISTORY</a
+                      >
+                    </li>
+                    <li class="u-nav-item">
+                      <a
+                        class="u-button-style u-nav-link u-white"
+                        href="contact"
+                        >CONTACT US</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div
+              class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav"
+            >
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul
+                  class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"
+                >
+                  <li class="u-nav-item">
+                    <a class="u-button-style u-nav-link" href="home">HOME</a>
+                  </li>
+                  <li class="u-nav-item">
+                    <a class="u-button-style u-nav-link" href="RESERVATION.html"
+                      >RESERVATION</a
+                    >
+                  </li>
+                  <li class="u-nav-item">
+                    <a class="u-button-style u-nav-link" href="LOGIN.html"
+                      >LOGIN</a
+                    >
+                  </li>
+                  <li class="u-nav-item">
+                    <a class="u-button-style u-nav-link">MORE</a>
+                    <div class="u-nav-popup">
+                      <ul
+                        class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"
+                      >
+                        <li class="u-nav-item">
+                          <a
+                            class="u-button-style u-nav-link"
+                            href="latest_news"
+                            >LATEST NEWS</a
+                          >
+                        </li>
+                        <li class="u-nav-item">
+                          <a class="u-button-style u-nav-link" href="add_player"
+                            >PLAYER</a
+                          >
+                        </li>
+                        <li class="u-nav-item">
+                          <a class="u-button-style u-nav-link" href="teams"
+                            >TEAMS</a
+                          >
+                        </li>
+                        <li class="u-nav-item">
+                          <a class="u-button-style u-nav-link" href="add_team"
+                            >ADD A TEAM</a
+                          >
+                        </li>
+                        <li class="u-nav-item">
+                          <a class="u-button-style u-nav-link" href="scores"
+                            >TOURNAMENT RESULTS</a
+                          >
+                        </li>
+                        <li class="u-nav-item">
+                          <a
+                            class="u-button-style u-nav-link"
+                            href="consultation"
+                            >CONSULTATION</a
+                          >
+                        </li>
+                        <li class="u-nav-item">
+                          <a
+                            class="u-button-style u-nav-link"
+                            href="teamformation"
+                            >TEAM FORMATION</a
+                          >
+                        </li>
+                        <li class="u-nav-item">
+                          <a
+                            class="u-button-style u-nav-link"
+                            href="bookingandpurchaseshistory"
+                            >BOOKING AND PURCHASING HISTORY</a
+                          >
+                        </li>
+                        <li class="u-nav-item">
+                          <a class="u-button-style u-nav-link" href="contact"
+                            >CONTACT US</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section class="u-clearfix u-section-1" id="sec-67fa">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">
+          TEAM FORMATION<span style="font-weight: 700"></span>
+        </h1>
+        <h1
+          class="u-custom-font u-font-oswald u-text u-text-custom-color-1 u-text-default u-text-2"
+        >
+          STARTING PLAYERS
+        </h1>
+        <div class="u-expanded-width u-form u-form-1">
+          <form
+            id="startingplayers"
+            action=""
+            method="POST"
+            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+            name="Starting Players"
+            style="padding: 10px"
+          >
+            {% csrf_token %}
+            <div class="u-form-group u-form-group-1">
+              <label for="text-1073" class="u-label">GK</label>
+              <input
+                type="text"
+                placeholder="Goalkeeper's Name"
+                id="text-1073"
+                name="GK_SP"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ GK_SP }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-2">
+              <label for="text-1695" class="u-label">DF</label>
+              <input
+                type="text"
+                placeholder="Defender's Name"
+                id="text-1695"
+                name="DF_SP_L"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ DF_SP_L }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-3">
+              <label for="text-bb68" class="u-label">DF</label>
+              <input
+                type="text"
+                placeholder="Defender's Name"
+                id="text-bb68"
+                name="DF_SP_LM"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ DF_SP_LM }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-4">
+              <label for="text-ab5a" class="u-label">DF</label>
+              <input
+                type="text"
+                placeholder="Defender's Name"
+                id="text-ab5a"
+                name="DF_SP_RM"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ DF_SP_RM }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-5">
+              <label for="text-53d1" class="u-label">DF</label>
+              <input
+                type="text"
+                placeholder="Defender's Name"
+                id="text-53d1"
+                name="DF_SP_R"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ DF_SP_R }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-6">
+              <label for="text-47d9" class="u-label">MF</label>
+              <input
+                type="text"
+                placeholder="Midfielder's Name"
+                id="text-47d9"
+                name="MF_SP_L"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ MF_SP_L }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-7">
+              <label for="text-2345" class="u-label">MF</label>
+              <input
+                type="text"
+                placeholder="Midfielder's Name"
+                id="text-2345"
+                name="MF_SP_LM"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ MF_SP_LM }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-8">
+              <label for="text-5e0c" class="u-label">MF</label>
+              <input
+                type="text"
+                placeholder="Midfielder's Name"
+                id="text-5e0c"
+                name="MF_SP_RM"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ MF_SP_RM }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-9">
+              <label for="text-5dcd" class="u-label">MF</label>
+              <input
+                type="text"
+                placeholder="Midfielder's Name"
+                id="text-5dcd"
+                name="MF_SP_R"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ MF_SP_R }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-10">
+              <label for="text-2132" class="u-label">FW</label>
+              <input
+                type="text"
+                id="text-2132"
+                name="FW_SP_LW"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                placeholder="Left Wing Forward's Name"
+                value="{{ FW_SP_LW }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-11">
+              <label for="text-8b9f" class="u-label">FW</label>
+              <input
+                type="text"
+                placeholder="Right Wing Forward's Name"
+                id="text-8b9f"
+                name="FW_SP_RW"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ FW_SP_RW }}"
+              />
+            </div>
+            <input
+              type="hidden"
+              id="buttonSignalSP"
+              name="FormSP"
+              value="Clicked"
+            />
+            <div class="u-align-left u-form-group u-form-submit">
+              <a
+                href="#"
+                value="submitSP"
+                name="submitSP"
+                class="u-btn u-btn-submit u-button-style"
+                >Update</a
+              >
+              <button
+                type="submit"
+                value="submitSP"
+                name="submitSP"
+                form="startingplayers"
+                class="u-form-control-hidden"
+              />
+            </div>
+            <div class="u-form-send-message u-form-send-success">
+              Thank you! Your message has been sent.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section
+      class="u-align-left u-clearfix u-custom-color-2 u-section-2"
+      id="sec-0e44"
+    >
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1
+          class="u-custom-font u-font-oswald u-text u-text-custom-color-1 u-text-default u-text-1"
+        >
+          PLAYERS ON BENCH / NOT SELECTED
+        </h1>
+        <div class="u-expanded-width u-form u-form-1">
+          <form
+            id="playersonbench"
+            action=""
+            method="POST"
+            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+            name="Players On Bench/Not Selected"
+            style="padding: 10px"
+          >
+            {% csrf_token %}
+            <div class="u-form-group u-form-group-1">
+              <label for="text-1073" class="u-label">GK</label>
+              <input
+                type="text"
+                placeholder="Goalkeeper's Name"
+                id="text-1073"
+                name="GK_NS"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ GK_NS }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-2">
+              <label for="text-1695" class="u-label">DF</label>
+              <input
+                type="text"
+                placeholder="Defender's Name"
+                id="text-1695"
+                name="DF_NS_1"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ DF_NS_1 }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-3">
+              <label for="text-c6e6" class="u-label">DF</label>
+              <input
+                type="text"
+                placeholder="Defender's Name"
+                id="text-c6e6"
+                name="DF_NS_2"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ DF_NS_2 }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-4">
+              <label for="text-47d9" class="u-label">MF</label>
+              <input
+                type="text"
+                placeholder="Midfielder's Name"
+                id="text-47d9"
+                name="MF_NS_1"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ MF_NS_1 }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-5">
+              <label for="text-2345" class="u-label">MF</label>
+              <input
+                type="text"
+                placeholder="Midfielder's Name"
+                id="text-2345"
+                name="MF_NS_2"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ MF_NS_2 }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-6">
+              <label for="text-2132" class="u-label">FW</label>
+              <input
+                type="text"
+                id="text-2132"
+                name="FW_NS_LW"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                placeholder="Right Wing Forward's Name"
+                value="{{ FW_NS_LW }}"
+              />
+            </div>
+            <div class="u-form-group u-form-group-7">
+              <label for="text-8b9f" class="u-label">FW</label>
+              <input
+                type="text"
+                placeholder="Left Wing Forward's Name"
+                id="text-8b9f"
+                name="FW_NS_RW"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                value="{{ FW_NS_RW }}"
+              />
+            </div>
+            <input
+              type="hidden"
+              id="buttonSignalNS"
+              name="FormNS"
+              value="Clicked"
+            />
+            <div class="u-align-left u-form-group u-form-submit">
+              <a href="#" class="u-btn u-btn-submit u-button-style">Update</a>
+              <button
+                type="submit"
+                value="submitNS"
+                name="submitNS"
+                form="playersonbench"
+                class="u-form-control-hidden"
+              />
+            </div>
+            <div class="u-form-send-message u-form-send-success">
+              Thank you! Your message has been sent.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="u-align-center u-clearfix u-footer u-grey-80 u-footer"
+      id="sec-b106"
+    >
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2
+          class="u-subtitle u-text u-text-custom-color-1 u-text-default u-text-1"
+        >
+          NEWSLETTER
+        </h2>
+        <h2
+          class="u-subtitle u-text u-text-custom-color-1 u-text-default u-text-2"
+        >
+          ABOUT CLUB
+        </h2>
+        <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
+          <form
+            action="#"
+            method="POST"
+            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+            source="custom"
+            name="form"
+            style="padding: 10px"
+          >
+            {% csrf_token %}
+            <div class="u-form-group u-form-name">
+              <label for="name-ba54" class="u-label">Name</label>
+              <input
+                type="text"
+                placeholder="Enter your Name"
+                id="name-ba54"
+                name="name"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                required=""
+              />
+            </div>
+            <div class="u-form-email u-form-group">
+              <label for="email-ba54" class="u-label">Email</label>
+              <input
+                type="email"
+                placeholder="Enter a valid email address"
+                id="email-ba54"
+                name="email"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                required=""
+              />
+              <input type="hidden" name="hidden" value="hidden" />
+            </div>
+            <div class="u-align-left u-form-group u-form-submit">
+              <a
+                href="#"
+                class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1"
+                >Submit</a
+              >
+              <input
+                type="submit"
+                value="submit"
+                class="u-form-control-hidden"
+              />
+            </div>
+          </form>
+        </div>
+        <p class="u-align-justify u-small-text u-text u-text-variant u-text-3">
+          FC EAGLES ​Lorem ipsum dolor sit amet, libero turpis non cras ligula,
+          id commodo, aenean est in volutpat amet sodales, porttitor bibendum
+          facilisi suspendisse, aliquam ipsum ante morbi sed ipsum mollis.
+          Sollicitudin viverra, vel varius eget sit mollis. Commodo enim aliquam
+          suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl
+          porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis
+          velit nibh.
+        </p>
+        <h2 class="u-subtitle u-text u-text-custom-color-2 u-text-4">
+          © 2022 FC EAGLES - A​ll Rights Reserved
+        </h2>
+      </div>
+    </footer>
+  </body>
+</html>

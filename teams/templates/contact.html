@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <body>
-<html lang="en">
-{% extends 'base.html' %}
-{% load static %}
+  <html lang="en">
+    {% extends 'base.html' %} {% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-</head>
-{% block content %}
+    <head>
+      {% load static %}
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Contact Us</title>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="{% static 'static/adminpage.css' %}" />
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous"
+      />
+    </head>
+    {% block content %}
 
-<body>
-  <style>
-    body {
-  background-image: url(https://wallpaper.dog/large/20487277.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-</style>
-
-    <div class="container">
+    <body>
+      <div class="container">
         <header>
-            <h1>Contact Us</h1>
-            <p>Contact us for any queries you may have!</p>
+          <h1 style="color: white; font-family: Lalezar">Contact Us</h1>
+          <p>Contact us for any queries you may have!</p>
         </header>
         <div class="content">
-            <div class="content-form">
-                <section>
-                    <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-                    <h2>Address</h2>
-                    <p>
-                        Building XYZ <br>
-                        Street 123 <br>
-                        City ABC
-                    </p>
-                </section>
+          <div class="content-form">
+            <section style="height: fit-content">
+              <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+              <h2>Address</h2>
+              <p>
+                Building XYZ <br />
+                Street 123 <br />
+                City ABC
+              </p>
+            </section>
 
-                <section>
-                    <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
-                    <h2>Phone</h2>
-                    <p>001-234-5678</p>
-                </section>
+            <section style="height: fit-content">
+              <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+              <h2>Phone</h2>
+              <p>001-234-5678</p>
+            </section>
 
-                <section>
-                    <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-                    <h2>E-mail</h2>
-                    <p>eaglesfc@gmail.com</p>
-                </section>
-            </div>
+            <section style="height: fit-content">
+              <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+              <h2>E-mail</h2>
+              <p>eaglesfc@gmail.com</p>
+            </section>
+          </div>
         </div>
-
-     
-       
-        
-    </div>    
+      </div>
+    </body>
+    {% endblock %}
+  </html>
 </body>
-{% endblock %}
-
-</html>

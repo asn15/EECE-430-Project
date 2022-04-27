@@ -4,7 +4,7 @@
 {% block title %} List of Teams {% endblock %}
 
 {% block content %}
-
+<div style="display: flex; flex-direction: column; align-items: center">
     <img class="icon-width" src="{% static 'images/ic_teams_list.png' %}" alt="">
 
     {% for team in teams %}
@@ -13,6 +13,6 @@
         </a>
         <p> {{ team.details }} </p>
     {% endfor %}
-
+</div>
 
 {% endblock %}

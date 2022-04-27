@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from teams.views import HomePageView, TeamsListView, ScoresListView, PlayerDetailsView, TeamDetailsView, AddTeamView, \
-    AddPlayerView, DeleteEvent, Bookings, DeleteBookings, errorbooking, Consultations, DeleteConsultations, Contact, News
+from teams.views import Home, TeamsListView, ScoresListView, PlayerDetailsView, TeamDetailsView, AddTeamView, \
+    AddPlayerView, DeleteEvent, errorbooking, Consultations, DeleteConsultations, Contact, News
 
 # Regular expression
 # -     : case sensitive A != a
@@ -28,25 +28,5 @@ from teams.views import HomePageView, TeamsListView, ScoresListView, PlayerDetai
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', HomePageView.as_view(), name="home-page"),
-    url(r'^teams/$', TeamsListView.as_view(), name="teams-list-view"),
-    url(r'^scores/$', ScoresListView.as_view(), name="scores-list-view"),
-
-    url(r'^player/(?P<slug>[-\w\x20]+)/$', PlayerDetailsView.as_view(), name="player-details-view"),
-    url(r'^team/(?P<slug>[-\w\x20]+)/$', TeamDetailsView.as_view(), name="team-details-view"),
-
-    url(r'^add_team/$', AddTeamView.as_view(), name="add-team-view"),
-    url(r'^add_player/$', AddPlayerView.as_view(), name="add-player-view"),
-    url(r'^delete_matches/$', DeleteEvent, name="delete-matches-view"),
-    url(r'^bookings/$', Bookings.as_view(), name="bookings"),
-    url(r'^delete_bookings/$', DeleteBookings, name="delete-bookings-view"),
-    url(r'^error_booking/$', errorbooking, name="error-booking-view"),
-    url(r'^consultation/$', Consultations.as_view(), name="consultation"),
-    url(r'^delete_consultation/$', DeleteConsultations, name="delete-consultation-view"),
-    url(r'^contact/$', Contact, name="contact-view"),
-    url(r'^latest_news/$', News, name="news-view"),
-
-
-
-
+    path('', include('teams.urls')),
 ]

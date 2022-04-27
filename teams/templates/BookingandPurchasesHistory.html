@@ -1,42 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  {% load static %}
+<html style="font-size: 16px" lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>
-      {% block title %} EAGLES FOOTBALL CLUB MANAGEMENT {% endblock %}
-    </title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="​EAGLES Football Club" />
+    <meta name="description" content="" />
+    <meta name="page_type" content="np-template-header-footer-from-plugin" />
+    <title>Booking and Purchases History</title>
+    <link
+      rel="stylesheet"
+      href="../../static/css/nicepage.css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/css/Booking-and-Purchases-History.css"
+      media="screen"
+    />
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="../static/jquery.js"
+      defer=""
+    ></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="../static/nicepage.js"
+      defer=""
+    ></script>
+    <link rel="icon" href="../static/images/EaglesFavicon.png" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
 
-    <!-- Bootstrap  Latest compiled and minified CSS  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" />
-    <!-- My Custom Css Stylesheet -->
-
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap"
-      rel="stylesheet"
-    />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "FC Eagles",
+        "logo": "images/EaglesLogo.png"
+      }
+    </script>
+    <meta name="theme-color" content="#478ac9" />
+    <meta property="og:title" content="Booking and Purchases History" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
   </head>
-  <body class="u-body u-xl-mode" style="padding-bottom: 2em !important">
-    <header
-      class="u-clearfix u-custom-color-1 u-header u-header"
-      id="sec-1c2f"
-      style="margin-bottom: 2em; height: 7.2em"
-    >
+  <body class="u-body u-xl-mode">
+    <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-1c2f">
       <div class="u-clearfix u-sheet u-sheet-1">
         <a
-          href=""
+          href="https://nicepage.com"
           class="u-image u-logo u-image-1"
           data-image-width="1000"
           data-image-height="1000"
@@ -47,10 +65,7 @@
             class="u-logo-image u-logo-image-1"
           />
         </a>
-        <nav
-          class="u-menu-dropdown u-offcanvas u-menu-1"
-          style="display: flex; flex-direction: row-reverse"
-        >
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div
             class="menu-collapse"
             style="font-size: 1rem; letter-spacing: 0px; font-weight: 700"
@@ -89,7 +104,7 @@
               <li class="u-nav-item">
                 <a
                   class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                  href="/"
+                  href="home"
                   style="padding: 10px 0px; color: white !important"
                   >HOME</a
                 >
@@ -97,7 +112,7 @@
               <li class="u-nav-item">
                 <a
                   class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                  href=""
+                  href="RESERVATION.html"
                   style="padding: 10px 0px"
                   >RESERVATION</a
                 >
@@ -105,7 +120,7 @@
               <li class="u-nav-item">
                 <a
                   class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                  href="/"
+                  href="LOGIN.html"
                   style="padding: 10px 0px"
                   >LOGIN</a
                 >
@@ -128,62 +143,59 @@
                     <li class="u-nav-item">
                       <a
                         class="u-button-style u-nav-link u-white"
-                        href="/latest_news"
+                        href="latest_news"
                         >LATEST NEWS</a
                       >
                     </li>
                     <li class="u-nav-item">
                       <a
                         class="u-button-style u-nav-link u-white"
-                        href="/add_player"
+                        href="add_player"
                         >PLAYERS</a
                       >
                     </li>
                     <li class="u-nav-item">
-                      <a class="u-button-style u-nav-link u-white" href="/teams"
+                      <a class="u-button-style u-nav-link u-white" href="teams"
                         >TEAMS</a
-                      >
-                    </li>
-                    <li class="/u-nav-item">
-                      <a
-                        class="u-button-style u-nav-link u-white"
-                        href="/add_team"
-                        style="padding: 10px 20px"
-                        >ADD A TEAM</a
                       >
                     </li>
                     <li class="u-nav-item">
                       <a
                         class="u-button-style u-nav-link u-white"
-                        href="/scores"
+                        href="add_team"
+                        >ADD A TEAM</a
+                      >
+                    </li>
+                    <li class="u-nav-item">
+                      <a class="u-button-style u-nav-link u-white" href="scores"
                         >TOURNAMENT RESULTS</a
                       >
                     </li>
                     <li class="u-nav-item">
                       <a
                         class="u-button-style u-nav-link u-white"
-                        href="/consultation"
+                        href="consultation"
                         >CONSULTATION</a
                       >
                     </li>
                     <li class="u-nav-item">
                       <a
                         class="u-button-style u-nav-link u-white"
-                        href="/teamformation"
+                        href="teamformation"
                         >TEAM FORMATION</a
                       >
                     </li>
                     <li class="u-nav-item">
                       <a
                         class="u-button-style u-nav-link u-white"
-                        href="/bookingandpurchaseshistory"
+                        href="bookingandpurchaseshistory"
                         >BOOKING AND PURCHASING HISTORY</a
                       >
                     </li>
                     <li class="u-nav-item">
                       <a
                         class="u-button-style u-nav-link u-white"
-                        href="/contact"
+                        href="contact"
                         >CONTACT US</a
                       >
                     </li>
@@ -202,15 +214,17 @@
                   class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"
                 >
                   <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="/">HOME</a>
+                    <a class="u-button-style u-nav-link" href="home">HOME</a>
                   </li>
                   <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="/"
+                    <a class="u-button-style u-nav-link" href="RESERVATION.html"
                       >RESERVATION</a
                     >
                   </li>
                   <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="/">LOGIN</a>
+                    <a class="u-button-style u-nav-link" href="LOGIN.html"
+                      >LOGIN</a
+                    >
                   </li>
                   <li class="u-nav-item">
                     <a class="u-button-style u-nav-link">MORE</a>
@@ -221,56 +235,49 @@
                         <li class="u-nav-item">
                           <a
                             class="u-button-style u-nav-link"
-                            href="/latest_news"
+                            href="latest_news"
                             >LATEST NEWS</a
                           >
                         </li>
                         <li class="u-nav-item">
-                          <a
-                            class="u-button-style u-nav-link"
-                            href="/add_player"
+                          <a class="u-button-style u-nav-link" href="add_player"
                             >PLAYER</a
                           >
                         </li>
                         <li class="u-nav-item">
-                          <a class="u-button-style u-nav-link" href="/teams"
+                          <a class="u-button-style u-nav-link" href="teams"
                             >TEAMS</a
                           >
                         </li>
                         <li class="u-nav-item">
-                          <a class="u-button-style u-nav-link" href="/add_team"
+                          <a class="u-button-style u-nav-link" href="add_team"
                             >ADD A TEAM</a
                           >
                         </li>
                         <li class="u-nav-item">
-                          <a class="u-button-style u-nav-link" href="/scores"
+                          <a class="u-button-style u-nav-link" href="scores"
                             >TOURNAMENT RESULTS</a
                           >
                         </li>
                         <li class="u-nav-item">
                           <a
                             class="u-button-style u-nav-link"
-                            href="/consultation"
+                            href="consultation"
                             >CONSULTATION</a
                           >
                         </li>
                         <li class="u-nav-item">
                           <a
                             class="u-button-style u-nav-link"
-                            href="/teamformation"
+                            href="teamformation"
                             >TEAM FORMATION</a
                           >
                         </li>
                         <li class="u-nav-item">
                           <a
                             class="u-button-style u-nav-link"
-                            href="/bookingandpurchaseshistory"
+                            href="bookingandpurchaseshistory"
                             >BOOKING AND PURCHASING HISTORY</a
-                          >
-                        </li>
-                        <li class="u-nav-item">
-                          <a class="u-button-style u-nav-link"
-                            >PERSONAL VIDEO CHAT</a
                           >
                         </li>
                         <li class="u-nav-item">
@@ -289,12 +296,133 @@
         </nav>
       </div>
     </header>
+    <section class="u-clearfix u-white u-section-1" id="carousel_8383">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2
+          class="u-align-center-md u-align-center-sm u-align-center-xs u-subtitle u-text u-text-custom-color-1 u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1"
+        >
+          BOOKING AND PURCH​ASES HISTORY
+        </h2>
+        <div
+          class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-white u-group-1"
+          style="
+            justify-content: center;
+            justify-items: center;
+            min-height: auto;
+          "
+        >
+          {% if BookingAndPurchasesHistory %}
+          <div
+            class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-xl u-container-layout-1"
+            style="justify-content: flex-start"
+          >
+            {% for element in BookingAndPurchasesHistory %}
+            <div
+              class="u-container-style u-custom-color-3 u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-2"
+              style="margin: 0.5em 0; align-self: center; border-radius: 0.5em"
+            >
+              <div class="u-container-layout u-container-layout-2">
+                <h2
+                  class="u-subtitle u-text u-text-default u-text-grey-70 u-text-2"
+                >
+                  {{element.time}}
+                </h2>
+                <h2
+                  class="u-subtitle u-text u-text-default u-text-grey-70 u-text-3"
+                >
+                  {{element.description}}
+                </h2>
+              </div>
+            </div>
+            {% endfor %} {% else %}
+            <div>
+              <h2
+                class="u-subtitle u-text u-text-default u-text-grey-70 u-text-1"
+                style="font-size: 2.5em"
+              >
+                No History Available
+              </h2>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </section>
 
-    <div
-      class="container-fluid"
-      style="display: flex; justify-content: center; flex-direction: column"
+    <footer
+      class="u-align-center u-clearfix u-footer u-grey-80 u-footer"
+      id="sec-b106"
     >
-      {% block content %} {% endblock %}
-    </div>
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2
+          class="u-subtitle u-text u-text-custom-color-1 u-text-default u-text-1"
+        >
+          NEWSLETTER
+        </h2>
+        <h2
+          class="u-subtitle u-text u-text-custom-color-1 u-text-default u-text-2"
+        >
+          ABOUT CLUB
+        </h2>
+        <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
+          <form
+            action="#"
+            method="POST"
+            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+            source="custom"
+            name="form"
+            style="padding: 10px"
+          >
+            {% csrf_token %}
+            <div class="u-form-group u-form-name">
+              <label for="name-ba54" class="u-label">Name</label>
+              <input
+                type="text"
+                placeholder="Enter your Name"
+                id="name-ba54"
+                name="name"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                required=""
+              />
+            </div>
+            <div class="u-form-email u-form-group">
+              <label for="email-ba54" class="u-label">Email</label>
+              <input
+                type="email"
+                placeholder="Enter a valid email address"
+                id="email-ba54"
+                name="email"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                required=""
+              />
+            </div>
+            <div class="u-align-left u-form-group u-form-submit">
+              <a
+                href="#"
+                class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1"
+                >Submit</a
+              >
+              <input
+                type="submit"
+                value="submit"
+                class="u-form-control-hidden"
+              />
+            </div>
+          </form>
+        </div>
+        <p class="u-align-justify u-small-text u-text u-text-variant u-text-3">
+          FC EAGLES ​Lorem ipsum dolor sit amet, libero turpis non cras ligula,
+          id commodo, aenean est in volutpat amet sodales, porttitor bibendum
+          facilisi suspendisse, aliquam ipsum ante morbi sed ipsum mollis.
+          Sollicitudin viverra, vel varius eget sit mollis. Commodo enim aliquam
+          suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl
+          porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis
+          velit nibh.
+        </p>
+        <h2 class="u-subtitle u-text u-text-custom-color-2 u-text-4">
+          © 2022 FC EAGLES - A​ll Rights Reserved
+        </h2>
+      </div>
+    </footer>
   </body>
 </html>

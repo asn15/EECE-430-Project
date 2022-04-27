@@ -1,0 +1,59 @@
+body {
+  background-color: rgba(150, 93, 233, 1) !important;
+  background-image: linear-gradient(
+    83.2deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  background-attachment: fixed;
+}
+
+h1 {
+  color: #fff;
+  font-weight: bold !important;
+}
+
+table.customTable {
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: rgb(127, 57, 231);
+  border-style: solid;
+  color: #000000;
+  text-align: center;
+  overflow-x: scroll !important;
+}
+
+table.customTable td,
+table.customTable th {
+  border-width: 2px;
+  border-color: rgb(127, 57, 231);
+  border-style: solid;
+  padding: 0.5em;
+}
+
+table.customTable thead {
+  background-color: #7ea8f8;
+}
+
+#teamformationtable {
+  width: 80%;
+  margin-bottom: 2em;
+}
+
+p a {
+  color: #ffffff;
+  font-weight: bold !important;
+}
+
+p a:hover {
+  color: rgb(203, 200, 237) !important;
+}
+
+table a {
+  color: rgb(118, 44, 230);
+}
+
+table a:hover {
+  color: rgb(162, 115, 233);
+}

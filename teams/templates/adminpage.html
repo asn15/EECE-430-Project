@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="../static/css/nicepage.css" media="screen" />
+    <link rel="stylesheet" href="../static/css/FC-Eagles.css" media="screen" />
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="../static/jquery.js"
+      defer=""
+    ></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="../static/nicepage.js"
+      defer=""
+    ></script>
+    <style>
+      {% include "static/adminpage.css" %}
+    </style>
+    <link rel="icon" href="../static/images/EaglesFavicon.png" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
+    <link
+      id="u-page-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700"
+    />
+  </head>
+  <body style="display: flex; flex-direction: column; align-items: center">
+    <h1>Upcoming Matches</h1>
+
+    <table class="customTable" border="1">
+      <tr>
+        <th>ID</th>
+        <th>Time</th>
+        <th>Home Team</th>
+        <th>Away Team</th>
+      </tr>
+      {% for x in myteams %}
+      <tr>
+        <td>
+          <a href="adminpage/updateupcomingmatches/{{ x.id }}">{{ x.id }}</a>
+        </td>
+        <td>{{ x.time }}</td>
+        <td>{{ x.homeTeam }}</td>
+        <td>{{ x.awayTeam }}</td>
+        <td><a href="adminpage/deleteupcomingmatches/{{ x.id }}">delete</a></td>
+      </tr>
+
+      {% endfor %}
+    </table>
+
+    <p>
+      <a href="adminpage/addupcomingmatches/">Add Match</a>
+    </p>
+
+    <h1>Newsletters</h1>
+
+    <table class="customTable" border="1">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email Address</th>
+      </tr>
+      {% for x in mynewsletters %}
+      <tr>
+        <td><a href="adminpage/updatenewsletter/{{ x.id }}">{{ x.id }}</a></td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.email }}</td>
+        <td><a href="adminpage/deletenewsletter/{{ x.id }}">delete</a></td>
+      </tr>
+
+      {% endfor %}
+    </table>
+
+    <p>
+      <a href="adminpage/addnewsletter/">Add Newsletter</a>
+    </p>
+
+    <h1>Booking and Purchases History</h1>
+
+    <table class="customTable" border="1">
+      <tr>
+        <th>ID</th>
+        <th>Time</th>
+        <th>Description</th>
+      </tr>
+      {% for x in mybookingandpurchaseshistory %}
+      <tr>
+        <td>
+          <a href="adminpage/updatebookingandpurchaseshistory/{{ x.id }}"
+            >{{ x.id }}</a
+          >
+        </td>
+        <td>{{ x.time }}</td>
+        <td>{{ x.description }}</td>
+        <td>
+          <a href="adminpage/deletebookingandpurchaseshistory/{{ x.id }}"
+            >delete</a
+          >
+        </td>
+      </tr>
+
+      {% endfor %}
+    </table>
+
+    <p>
+      <a href="adminpage/addbookingandpurchaseshistory/">Add Entry</a>
+    </p>
+
+    <h1>Team Formation</h1>
+
+    <table class="customTable" id="teamformationtable" border="1">
+      <tr>
+        <th style="border: none !important"></th>
+        <th>GK SP:</th>
+        <th>DF SP L:</th>
+        <th>DF SP LM:</th>
+        <th>DF SP R:</th>
+        <th>DF SP RM:</th>
+        <th>MF SP L:</th>
+        <th>MF SP LM:</th>
+        <th>MF SP R:</th>
+        <th>MF SP RM:</th>
+        <th>FW SP LW:</th>
+        <th>FW SP RW:</th>
+        <th>GK NS:</th>
+        <th>DF NS 1:</th>
+        <th>DF NS 2:</th>
+        <th>MF NS 1:</th>
+        <th>MF NS 2:</th>
+        <th>FW NS LW:</th>
+        <th>FW NS RW:</th>
+      </tr>
+      {% for x in myteamformation %}
+      <tr>
+        <td>
+          <a href="adminpage/updateteamformation/{{ x.id }}"> update </a>
+        </td>
+        <td>{{ x.GK_SP }}</td>
+        <td>{{ x.DF_SP_L }}</td>
+        <td>{{ x.DF_SP_LM }}</td>
+        <td>{{ x.DF_SP_R }}</td>
+        <td>{{ x.DF_SP_RM }}</td>
+        <td>{{ x.MF_SP_L }}</td>
+        <td>{{ x.MF_SP_LM }}</td>
+        <td>{{ x.MF_SP_R }}</td>
+        <td>{{ x.MF_SP_RM }}</td>
+        <td>{{ x.FW_SP_LW }}</td>
+        <td>{{ x.FW_SP_RW }}</td>
+        <td>{{ x.GK_NS }}</td>
+        <td>{{ x.DF_NS_1 }}</td>
+        <td>{{ x.DF_NS_2 }}</td>
+        <td>{{ x.MF_NS_1 }}</td>
+        <td>{{ x.MF_NS_2 }}</td>
+        <td>{{ x.FW_NS_LW }}</td>
+        <td>{{ x.FW_NS_RW }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

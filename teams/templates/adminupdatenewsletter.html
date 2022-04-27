@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Newsletter</title>
+    <style>
+      {% include "static/adminsecondarypages.css" %}
+    </style>
+  </head>
+  <body>
+    <h1>Update Newsletter</h1>
+
+    <form action="updaterecordnewsletter/{{ mynewsletter.id }}" method="post">
+      {% csrf_token %} Name:<br />
+      <input name="name" value="{{ mynewsletter.name }}" />
+      <br /><br />
+      Email:<br />
+      <input name="email" value="{{ mynewsletter.email }}" />
+      <br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
