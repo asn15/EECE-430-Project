@@ -12,8 +12,8 @@ urlpatterns = [
 
     path('adminpage', views.AdminPage, name='AdminPage'),
 
-    path('login', views.Login, name='Login'),
-    path('register', views.Register, name='Register'),
+    url('login', views.Login, name='Login'),
+    url('register', views.Register, name='Register'),
 
     path('adminpage/addupcomingmatches/', views.addupcomingmatches, name='add'),
     path('adminpage/addupcomingmatches/addrecordupcomingmatches/', views.addrecordupcomingmatches, name='addrecord'),
