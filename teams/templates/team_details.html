@@ -13,5 +13,19 @@
             <h3>{{ player.name }}</h3>
         </a>
     {% endfor %}
+    
+        <table style= "margin-left: auto; margin-right: auto; margin: 25px 0 font-size: 0.9em font-family: sans-serif min-width: 400px box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) background-color: #009879; color: #ffffff; text-align: left;"
+      border="thin">
+
+        {% for player in team.player_set.all %}
+          <tr style= "background-color: #60c1ad">
+          <td>{{ player.id }}</td>
+          <td>{{ player.name }}</td>
+          <td>{{ player.team.name }}</td>
+          <td><a href={% url 'delete-player' id=player.id %}>delete</a></td>
+          </tr>
+        {% endfor %}
+        </table>
+
 
 {% endblock %}

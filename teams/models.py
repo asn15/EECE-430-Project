@@ -3,6 +3,7 @@ from django.db import models
 import datetime
 # Create your models here.
 from django.db.models import DO_NOTHING
+from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 alphanumeric = RegexValidator(r'^([a-zA-Z]+\s)*[a-zA-Z]+$', 'Only characters are allowed.')
 
@@ -40,7 +41,10 @@ class GameScore(models.Model):
 
     def __str__(self):
         return '{} {} - {} {}'.format(self.first_team_relation.name, self.first_team_relation.name, self.second_team_score, self.second_team)
-  
+    
+    def clean(self):
+        if self.first_team_relation == self.second_team_relation:
+            raise ValidationError('First and Second Team should be different.')
     
 class Consultation(models.Model):
     name_1 = models.CharField(max_length=256, validators=[alphanumeric])

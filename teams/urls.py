@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.conf.urls import url
 from .views import Home, TeamsListView, ScoresListView, PlayerDetailsView, TeamDetailsView, AddTeamView, \
-    AddPlayerView, DeleteEvent, errorbooking, Consultations, DeleteConsultations, Contact, News
+    AddPlayerView, DeleteEvent, errorbooking, Consultations, DeleteConsultations, Contact, News, delete_score, delete_player
 
 urlpatterns = [
     path('', views.Home, name='Home'),
@@ -50,5 +50,8 @@ urlpatterns = [
     url(r'^delete_consultation/$', DeleteConsultations, name="delete-consultation-view"),
     url(r'^contact/$', Contact, name="contact-view"),
     url(r'^latest_news/$', News, name="news-view"),
+    path(r'^delete_score/<int:id>/$', delete_score, name='delete-score'),
+    path(r'^delete_player/<int:id>/$', delete_player, name='delete-player'),
+
 
 ]

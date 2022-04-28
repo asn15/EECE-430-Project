@@ -4,6 +4,7 @@
 {% block title %} Tournament Results {% endblock %}
 
 {% block content %}
+ 
     <div align="center">
         <img class="icon-width" src="{% static 'images/ic_game_score.png' %}" alt="">
     </div>
@@ -20,5 +21,20 @@
             <h3> {{ score.first_team_score }} - {{ score.second_team_score }} </h3>
         </div>
     {% endfor %}
+
+    <table style= "margin-left: auto; margin-right: auto; margin: 25px 0 font-size: 0.9em font-family: sans-serif min-width: 400px box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) background-color: #009879; color: #ffffff; text-align: left;"
+  border="thin">
+
+    {% for score in scores %}
+      <tr style= "background-color: #60c1ad">
+      <td>{{ score.id }}</td>
+      <td>{{ score.first_team_relation.name }}</td>
+      <td>{{ score.second_team_relation.name }}</td>
+      <td>{{ score.first_team_score }}</td>
+      <td>{{ score.second_team_score }}</td>
+      <td><a href={% url 'delete-score' id=score.id %}>delete</a></td>
+      </tr>
+    {% endfor %}
+    </table>
 
 {% endblock %}

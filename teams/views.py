@@ -133,6 +133,15 @@ def Contact(request):
 def News(request):
     return render(request, 'latest_news.html')
 
+def delete_score(request, id):
+  member = GameScore.objects.get(id=id)
+  member.delete()
+  return redirect('/scores/')
+
+def delete_player(request, id):
+  member = Player.objects.get(id=id)
+  member.delete()
+  return redirect('/teams/')
 
 def Home(response):
   last_five_games = Teams.objects.all().order_by('-id')[:5]
