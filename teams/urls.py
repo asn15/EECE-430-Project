@@ -12,6 +12,9 @@ urlpatterns = [
 
     path('adminpage', views.AdminPage, name='AdminPage'),
 
+    path('login', views.Login, name='Login'),
+    path('register', views.Register, name='Register'),
+
     path('adminpage/addupcomingmatches/', views.addupcomingmatches, name='add'),
     path('adminpage/addupcomingmatches/addrecordupcomingmatches/', views.addrecordupcomingmatches, name='addrecord'),
     path('adminpage/deleteupcomingmatches/<int:id>', views.deleteupcomingmatches, name='delete'),
@@ -43,9 +46,6 @@ urlpatterns = [
     url(r'^add_team/$', AddTeamView.as_view(), name="add-team-view"),
     url(r'^add_player/$', AddPlayerView.as_view(), name="add-player-view"),
     url(r'^delete_matches/$', DeleteEvent, name="delete-matches-view"),
-    # url(r'^bookings/$', Bookings.as_view(), name="bookings"),
-    # url(r'^delete_bookings/$', DeleteBookings, name="delete-bookings-view"),
-    # url(r'^error_booking/$', errorbooking, name="error-booking-view"),
     url(r'^consultation/$', Consultations.as_view(), name="consultation"),
     url(r'^delete_consultation/$', DeleteConsultations, name="delete-consultation-view"),
     url(r'^contact/$', Contact, name="contact-view"),

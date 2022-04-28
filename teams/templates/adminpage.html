@@ -36,6 +36,11 @@
     />
   </head>
   <body style="display: flex; flex-direction: column; align-items: center">
+    <h4>
+      <a href="/" style="color: white; padding: 1em; text-decoration: underline"
+        >Back to Homepage</a
+      >
+    </h4>
     <h1>Upcoming Matches</h1>
 
     <table class="customTable" border="1">
@@ -48,7 +53,7 @@
       {% for x in myteams %}
       <tr>
         <td>
-          <a href="adminpage/updateupcomingmatches/{{ x.id }}">{{ x.id }}</a>
+          <a href="adminpage/updateupcomingmatches/{{ x.id }}">update</a>
         </td>
         <td>{{ x.time }}</td>
         <td>{{ x.homeTeam }}</td>
@@ -73,7 +78,7 @@
       </tr>
       {% for x in mynewsletters %}
       <tr>
-        <td><a href="adminpage/updatenewsletter/{{ x.id }}">{{ x.id }}</a></td>
+        <td><a href="adminpage/updatenewsletter/{{ x.id }}">update</a></td>
         <td>{{ x.name }}</td>
         <td>{{ x.email }}</td>
         <td><a href="adminpage/deletenewsletter/{{ x.id }}">delete</a></td>
@@ -98,7 +103,7 @@
       <tr>
         <td>
           <a href="adminpage/updatebookingandpurchaseshistory/{{ x.id }}"
-            >{{ x.id }}</a
+            >update</a
           >
         </td>
         <td>{{ x.time }}</td>

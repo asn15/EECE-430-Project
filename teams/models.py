@@ -40,18 +40,6 @@ class GameScore(models.Model):
 
     def __str__(self):
         return '{} {} - {} {}'.format(self.first_team_relation.name, self.first_team_relation.name, self.second_team_score, self.second_team)
-
-# class BookingAndPurchasesHistory(models.Model):
-#   Fields = models.CharField(max_length=256,
-#                                        choices=(('1', 'Tigers'), ('2', 'Lions'), ('3', 'Sharks'), ('4', 'Goats')), default = 'Tigers')
-#   Date = models.DateField(default=datetime.date.today)
-  
-#   Timing = models.CharField(max_length=256,
-#                                        choices=(('1', '1PM - 2PM'), ('2', '2PM - 3PM'), ('3', '3PM - 4PM'), ('4', '4PM - 5PM')), default=None, 
-#                                        )
-
-#   def __str__(self):
-#       return '{} - {}'.format(self.time, self.description, self.timing)
   
     
 class Consultation(models.Model):
@@ -75,7 +63,7 @@ class Teams(models.Model):
   awayTeam = models.CharField(max_length=255)
   
   class Meta:
-      verbose_name_plural = "Teams"
+      verbose_name_plural = "Upcoming Games"
 
 class BookingAndPurchasesHistoryModel(models.Model):
   time = models.CharField(max_length=255)
@@ -118,3 +106,11 @@ class Newsletter(models.Model):
 
     class Meta:
         verbose_name_plural = "Newsletter"
+
+class Users(models.Model):
+    username = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
+    admin = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name_plural = "Users"

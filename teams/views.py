@@ -12,25 +12,9 @@ from teams.models import Team, GameScore, Player, Consultation
 from multiprocessing import context
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from .models import Newsletter, Teams, BookingAndPurchasesHistoryModel, TeamFormationModel, Newsletter
+from .models import Newsletter, Teams, BookingAndPurchasesHistoryModel, TeamFormationModel, Newsletter, Users
 from django.urls import reverse
 
-
-# Render teams using View class
-# class HomePageView(View):
-#     def get(self, request):
-#         # get all teams from database
-#         all_teams = Team.objects.all()
-
-#         # Send all teams to template as teams
-#         context = {
-#             "teams": all_teams
-#         }
-#         return render(request, 'home.html', context)
-    
-
-
-# Render teams using ListView class
 class TeamsListView(ListView):
     model = Team
     template_name = 'teams_list.html'
@@ -60,11 +44,6 @@ def DeleteEvent(request):
     GameScore.objects.all().delete()
     return redirect('/scores/')
 
-    
-# def DeleteBookings(request):
-#     if BookingAndPurchasesHistory.objects.last():
-#         BookingAndPurchasesHistory.objects.last().delete()
-#     return redirect('/bookings/')
     
 
 
@@ -123,23 +102,6 @@ class AddPlayerView(View):
 def errorbooking(request):
     return render(request, 'error_booking.html')
 
-# class Bookings(ListView):
-#     model = BookingAndPurchasesHistory
-#     template_name = 'bookings.html'
-#     context_object_name = 'bookings'
-
-#     def get_context_data(self, **kwargs):
-#         context = super(Bookings, self).get_context_data(**kwargs)
-#         context['form'] = Bookingform()
-#         return context
-
-#     def post(self, request, *args, **kwargs):
-#         form = Bookingform(request.POST)
-#         if form.is_valid():
-#             if BookingAndPurchasesHistory.objects.filter(Timing = request.POST['Timing'], Date = request.POST['Date'], Fields = request.POST['Fields']).exists():
-#                 return render(request, 'error_booking.html')
-#             form.save()
-#         return redirect('/bookings/')
 
 class Consultations(ListView):
     model = Consultation
@@ -180,10 +142,6 @@ def Home(response):
     Email = response.POST.get('email')
     NewsletterForm = Newsletter(name=Name, email=Email)
     NewsletterForm.save()
-    # context = {
-    #   "empty": "",
-    # }
-    # return HttpResponseRedirect(reverse('Home'))
   context = {
     "last_five_games": last_five_games,
   }
@@ -207,7 +165,7 @@ def bookingAndPurchasesHistoryFunc(response):
 def TeamFormation(response):
   template = loader.get_template('teamformation.html')
   GK_SP, DF_SP_L, DF_SP_LM, DF_SP_RM, DF_SP_R, MF_SP_L, MF_SP_LM, MF_SP_RM, MF_SP_R, FW_SP_LW, FW_SP_RW, GK_NS, DF_NS_1, DF_NS_2, MF_NS_1, MF_NS_2, FW_NS_LW, FW_NS_RW = "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
-  if (TeamFormationModel.objects.get()):
+  if (TeamFormationModel.objects.count() > 0):
     TeamFormationTemp = TeamFormationModel.objects.get()
     GK_SP = TeamFormationTemp.GK_SP
     DF_SP_L = TeamFormationTemp.DF_SP_L
@@ -253,9 +211,6 @@ def TeamFormation(response):
         TeamFormationTemp.FW_SP_LW = FW_SP_LW
         TeamFormationTemp.FW_SP_RW = FW_SP_RW
         TeamFormationTemp.save()
-      else:
-        TeamFormationTemp = TeamFormationModel(GK_SP=GK_SP, DF_SP_L=DF_SP_L, DF_SP_LM=DF_SP_LM, DF_SP_RM=DF_SP_RM, DF_SP_R=DF_SP_R, MF_SP_L=MF_SP_L, MF_SP_LM=MF_SP_LM, MF_SP_RM=MF_SP_RM, MF_SP_R=MF_SP_R, FW_SP_LW=FW_SP_LW, FW_SP_RW=FW_SP_RW, GK_NS=GK_NS, DF_NS_1=DF_NS_1, DF_NS_2=DF_NS_2, MF_NS_1=MF_NS_1, MF_NS_2=MF_NS_2, FW_NS_LW=FW_NS_LW, FW_NS_RW=FW_NS_RW)
-        TeamFormationTemp.save()
     if response.POST.get('FormNS'):
       GK_NS = response.POST.get('GK_NS')
       DF_NS_1 = response.POST.get('DF_NS_1')
@@ -274,9 +229,9 @@ def TeamFormation(response):
         TeamFormationTemp.FW_NS_LW = FW_NS_LW
         TeamFormationTemp.FW_NS_RW = FW_NS_RW
         TeamFormationTemp.save()
-      else:
-        TeamFormationTemp = TeamFormationModel(GK_SP=GK_SP, DF_SP_L=DF_SP_L, DF_SP_LM=DF_SP_LM, DF_SP_RM=DF_SP_RM, DF_SP_R=DF_SP_R, MF_SP_L=MF_SP_L, MF_SP_LM=MF_SP_LM, MF_SP_RM=MF_SP_RM, MF_SP_R=MF_SP_R, FW_SP_LW=FW_SP_LW, FW_SP_RW=FW_SP_RW, GK_NS=GK_NS, DF_NS_1=DF_NS_1, DF_NS_2=DF_NS_2, MF_NS_1=MF_NS_1, MF_NS_2=MF_NS_2, FW_NS_LW=FW_NS_LW, FW_NS_RW=FW_NS_RW)
-        TeamFormationTemp.save()
+  else:
+    TeamFormationTemp = TeamFormationModel(GK_SP=GK_SP, DF_SP_L=DF_SP_L, DF_SP_LM=DF_SP_LM, DF_SP_RM=DF_SP_RM, DF_SP_R=DF_SP_R, MF_SP_L=MF_SP_L, MF_SP_LM=MF_SP_LM, MF_SP_RM=MF_SP_RM, MF_SP_R=MF_SP_R, FW_SP_LW=FW_SP_LW, FW_SP_RW=FW_SP_RW, GK_NS=GK_NS, DF_NS_1=DF_NS_1, DF_NS_2=DF_NS_2, MF_NS_1=MF_NS_1, MF_NS_2=MF_NS_2, FW_NS_LW=FW_NS_LW, FW_NS_RW=FW_NS_RW)
+    TeamFormationTemp.save()
 
   if response.POST.get('hidden'):
     Name = response.POST.get('name')
@@ -321,6 +276,58 @@ def AdminPage(request):
   }
   return HttpResponse(template.render(context, request))
 
+
+def Login(response):
+  usersDB = Users.objects.all().values() or []
+  reply = ''
+  username = ""
+  if response.method == 'POST':
+    reply = 'Failed'
+    username = response.POST.get('username')
+    password = response.POST.get('password')
+    for user in usersDB:
+      if user['username'] == username and user['password'] == password:
+        if user['admin'] == True:
+          reply = 'Succeeded as Admin'
+        else:
+          reply = 'Succeeded as User'
+          username = user['username']
+
+  if response.POST.get('hidden'):
+    Name = response.POST.get('name')
+    Email = response.POST.get('email')
+    NewsletterForm = Newsletter(name=Name, email=Email)
+    NewsletterForm.save()
+
+  template = loader.get_template('Login.html')
+  context = {
+    'reply': reply,
+    'username': username,
+  }
+  return HttpResponse(template.render(context, response))
+
+def Register(response):
+  if response.method == 'POST' and response.POST.get('username'):
+    Username = response.POST.get('username')
+    Password = response.POST.get('password')
+    Admin = response.POST.get('admin')
+    if Admin == 'True':
+      Admin = True
+    else:
+      Admin = False
+    UserForm = Users(username=Username, password=Password, admin=Admin)
+    UserForm.save()
+
+  elif response.POST.get('hidden'):
+    Name = response.POST.get('name')
+    Email = response.POST.get('email')
+    NewsletterForm = Newsletter(name=Name, email=Email)
+    NewsletterForm.save()
+
+    return redirect('Home')
+  else:
+    template = loader.get_template('Sign-Up.html')
+    return HttpResponse(template.render({}, response))
 
 # Upcoming Matches
 
