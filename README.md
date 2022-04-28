@@ -44,14 +44,8 @@ Tracking progress for EECE 430 project
 
 5- User can see and interact with Tournament results and statistics
 
+6- User can book fields for private matches
 
-## Future Implementations:
+7- User can book a consultation with the available coaches
 
-- Scheduling Classes
-- Reserving fields
-- Payment form
-- Contact form
-- Consultation page
-- Newspage
-- Page for contacts
-- and more... :)
+8- User can check the latest news related to football
